@@ -17,7 +17,6 @@ body {
   line-height: 1.4;
   display: grid;
   place-content: center;
-  max-width: 1440px;
 }
 img {
   display: block;
@@ -119,13 +118,14 @@ h3 {
   opacity: 1;
 }
 
-[class*="body"] {
-  width: 100%;
-  min-width: 375px;
-}
-[class*="info"] {
-  width: 100%;
-  min-width: 375px;
-  padding-left: 2rem;
-  padding-right: 2rem;
+@media screen and (max-width: 375px) {
+  body,
+  .name,
+  .btn {
+    display: inline;
+    width: 100%; /* The width is 100%, when the viewport is 375px or smaller */
+  }
+  .info {
+    padding: 0;
+  }
 }
